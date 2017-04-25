@@ -1,0 +1,4 @@
+.vagrant
+.rvmrc
+node_modules
+.netlify
