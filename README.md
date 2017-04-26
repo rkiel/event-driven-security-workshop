@@ -1,4 +1,4 @@
-## AWS CLI
+## Event Driven Security Workshop
 
 # OS X
 
@@ -6,8 +6,8 @@ Create the project
 
 ```unix
 cd ~/GitHub/rkiel
-git clone git@github.com:rkiel/aws-cli.git
-cd aws-cli
+git clone git@github.com:rkiel/event-driven-security-workshop.git
+cd event-driven-security-workshop
 ```
 
 # AWS Console
@@ -16,8 +16,12 @@ Create a new user
 
 * click *IAM*
 * click *Users*
-* click *Create New Users*
-* enter `aws-cli`
+* click *Add User*
+* enter `security-workshop`
+
+Access Type
+* check *Programatic access*
+* check *AWS Management Console access*
 
 Generate credentials
 
@@ -28,7 +32,7 @@ Generate credentials
 Grant user permissions
 
 * click *Users*
-* click *aws-cli*
+* click *security-workshop*
 * click *Permissions*
 * click *Attach Policy*
 * click *AdministratorAccess*
@@ -39,8 +43,8 @@ Grant user permissions
 Parse out the AWS credentials
 
 ```unix
-grep aws-cli ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $2}' > aws_access_key_id.txt
-grep aws-cli ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $3}' > aws_secret_access_key.txt
+grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $2}' > aws_access_key_id.txt
+grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $3}' > aws_secret_access_key.txt
 ```
 
 Start up vagrant
