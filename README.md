@@ -43,8 +43,11 @@ Grant user permissions
 Parse out the AWS credentials
 
 ```unix
-grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $2}' > aws_access_key_id.txt
-grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $3}' > aws_secret_access_key.txt
+grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $1}' > user_name.txt
+grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $2}' > password.txt
+grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $3}' > aws_access_key_id.txt
+grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $4}' > aws_secret_access_key.txt
+grep security-workshop ~/Downloads/credentials.csv |awk  -F "\"*,\"*" '{print $5}' > console_login.txt
 ```
 
 Start up vagrant
